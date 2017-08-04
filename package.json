@@ -1,0 +1,32 @@
+{
+  "name": "chestnut-app",
+  "version": "0.1.0",
+  "description": "koa2 app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nandy007/chestnut-app.git"
+  },
+  "keywords": [
+    "koa2",
+    "app"
+  ],
+  "author": "nandy007",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "http-proxy": "^1.16.2",
+    "koa": "^2.0.0",
+    "koa-bodyparser": "^3.2.0",
+    "koa-multer": "1.0.1",
+    "koa-static": "^4.0.0",
+    "koa-views": "^6.0.2"
+  },
+  "bugs": {
+    "url": "https://github.com/nandy007/chestnut-app/issues"
+  },
+  "homepage": "https://github.com/nandy007/chestnut-app#readme"
+}

@@ -2,9 +2,11 @@
 
 chestnut-app是一个基于KOA2的快速web开发框架，要求node版本为7.X和8.X
 
-内置了常用中间件、多进程启动和proxy协议代理。
+内置了常用中间件(请求体解析、路由控制、会话控制等)、多进程启动和proxy协议代理。
 
-一个完成的chestnut-app必须同时引入[chestnut-router](https://github.com/nandy007/chestnut-router)、[chestnut-session](https://github.com/nandy007/chestnut-session)、[chestnut-utils](https://github.com/nandy007/chestnut-utils)模块
+并且提供常用工具类，包括数据库操作、页面抓取操作、html内容拣选等
+
+一个完整的chestnut-app必须同时引入[chestnut-router](https://github.com/nandy007/chestnut-router)、[chestnut-session](https://github.com/nandy007/chestnut-session)、[chestnut-utils](https://github.com/nandy007/chestnut-utils)模块
 
 具体示例请参考：[https://github.com/nandy007/chestnutdemo](https://github.com/nandy007/chestnutdemo)
 

@@ -55,8 +55,8 @@ class Middleware {
      * 其中key为会话id前缀，storeConfig为会话存储数据库配置，必须符合chestnut-utils的db要求
 	 */
     sessionHandler(sessionConfig) {
-        // 如果sessionConfig不是对象则不使用此中间件处理
-        if (typeof sessionConfig !== 'object') return;
+        // 如果sessionConfig为false则不使用此中间件处理
+        if (sessionConfig === false) return;
         const sessionMiddleware = require('chestnut-session');
         this.app.use(sessionMiddleware(sessionConfig));
     };

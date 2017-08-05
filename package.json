@@ -1,6 +1,6 @@
 {
   "name": "chestnut-app",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "koa2 app",
   "main": "index.js",
   "scripts": {

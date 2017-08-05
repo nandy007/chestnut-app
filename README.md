@@ -86,8 +86,9 @@ const middleware = {
 	*/
 	viewPath : ,
 	/*会话配置
-	  如果要使用则必须设置，至少设置key（会话id前缀）和storeConfig（数据库存储信息）
-	  如果不设置则不使用会话控制，这时候需要自己添加中间件支持
+	  默认可不设置, 默认使用koasession的memory管理会话
+	  如果要使用则必须至少设置key（会话id前缀）和storeConfig（数据库存储信息）
+	  或者设置为false不使用，这时候需要自己添加中间件
 	*/
 	sessionConfig : ,
 	/*路由文件目录路径

@@ -111,7 +111,7 @@ const router = require('chestnut-router').create('/interface');
 
 module.exports = router
   .get('/login', async function(ctx){
-		ctx.body = 'hi chestbut app';
+		ctx.body = 'hi chestnut app';
 	}); // 访问路径为http://ip:port/interface/login
 
 ```

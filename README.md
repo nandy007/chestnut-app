@@ -221,9 +221,9 @@ app.stratProxy({
 	rule : function(config){
 		return function(req, res, proxy){
 			/*根据一些逻辑算法得出要代理的目标服务器
-			  必须符合{ip,port}或者protocol://ip:port形式
+			  target必须符合{ip,port}或者protocol://ip:port形式
 			*/
-			const target = ...；
+			const target = ...;
 			proxy.web(req, res, { target: target });
 		}
 	}

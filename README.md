@@ -8,7 +8,7 @@ chestnut-app是一个基于KOA2的快速web开发框架，要求node版本为7.X
 
 一个完整的chestnut-app必须同时引入[chestnut-router](https://github.com/nandy007/chestnut-router)、[chestnut-session](https://github.com/nandy007/chestnut-session)、[chestnut-utils](https://github.com/nandy007/chestnut-utils)模块
 
-具体示例请参考：[https://github.com/nandy007/chestnutdemo](https://github.com/nandy007/chestnutdemo)
+具体测试和示例请参考：[https://github.com/nandy007/chestnutdemo](https://github.com/nandy007/chestnutdemo)
 
 # 使用方法
 
@@ -103,7 +103,9 @@ const middleware = {
 
 ```
 
-需要注意的是，routerPath的配置需要在路由文件中使用chestnut-router模块来创建router对象，比如：
+需要注意的是：
+
+1. routerPath的配置需要在路由文件中使用chestnut-router模块来创建router对象，比如：
 
 ```javascript
 
@@ -116,6 +118,13 @@ module.exports = router
 	}); // 访问路径为http://ip:port/interface/login
 
 ```
+
+使用方法请移步：[chestnut-router](https://github.com/nandy007/chestnut-router)
+
+
+2. sessionConfig的配置默认使用内存保存会话，也支持使用mysql数据库保存会话实现跨域。
+
+使用方法请移步：[chestnut-session](https://github.com/nandy007/chestnut-session)
 
 
 ## 支持的启动方式
@@ -143,7 +152,7 @@ app.startCluster(config);
 
 ## 支持proxy代理
 
-内置使用http-proxy模块作为代理，目前支持两个算法：roundrobin和vhost，并支持自定义算法。
+内置使用http-proxy模块作为代理，目前支持算法：roundrobin、vhost和sourcebalancer，并支持自定义算法。
 
 proxy默认使用cluster方式启动。
 
@@ -208,6 +217,30 @@ app.startProxy({
 
 注：router对象内的属性是域名地址，其值包含两种写法，一种是对象{host,port}，一种是protocol://ip:port
 
+
+### sourcebalancer算法
+
+实现基于请求源的负载策略，同一个session会话的请求均指向同一台服务器。
+
+
+```javascript
+
+app.startProxy({
+	port : 3000,
+	rule : 'sourcebalancer',
+	servers : [
+		{
+			"host":"localhost",
+			"port":"3001"
+		},
+		'http://localhost:3002'
+	]
+});
+
+
+```
+
+
 ### 自定义算法
 
 要求设置rule属性为一个函数，此函数接受一个参数，并需要return一个function函数，此函数接受三个参数分别为req、res和proxy，其中req为koa的请求体，res为koa的响应体，proxy是http-proxy的实例对象，一般可以通过req和res来做业务逻辑，最后需要使用proxy来实现代理设置。
@@ -231,3 +264,7 @@ app.stratProxy({
 
 
 ```
+
+# 工具类的使用
+
+chestnut-app内置模块提供了数据库操作类、编解码类、网络请求类、html内容选择类等。具体用法请进入移步[chestnut-utils](https://github.com/nandy007/chestnut-utils)

@@ -1,10 +1,10 @@
 {
   "name": "chestnut-app",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "koa2 app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require mocha-babel"
   },
   "repository": {
     "type": "git",
@@ -16,10 +16,20 @@
   ],
   "author": "nandy007",
   "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.4.7",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2015-node5": "^1.2.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "koa": "^2.0.0",
+    "mocha": "*",
+    "should": "*",
+    "should-promised": "^0.3.0"
+  },
   "dependencies": {
-    "chestnut-router": "^0.1.0",
-    "chestnut-session": "^0.1.2",
-    "chestnut-utils": "^0.1.5",
+    "chestnut-router": "^0.2.0",
+    "chestnut-session": "^0.2.0",
+    "chestnut-utils": "^0.2.0",
     "ejs": "^2.5.6",
     "http-proxy": "^1.16.2",
     "koa": "^2.0.0",

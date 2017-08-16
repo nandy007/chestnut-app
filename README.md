@@ -150,6 +150,21 @@ app.startCluster(config);
 
 ```
 
+方式三：仅初始化不启动
+
+此方式实际仅初始化了中间件，但是不直接启动，需要开发者自己启动，比如：
+
+```javascript
+
+// 仅初始化
+app.init(config);
+// 手动创建服务器,并使用app中间件
+var server = require('http').createServer(app.callback());
+// 启动服务器
+server.listen(config.port);
+
+```
+
 ## 支持proxy代理
 
 内置使用http-proxy模块作为代理，目前支持算法：roundrobin、vhost和sourcebalancer，并支持自定义算法。

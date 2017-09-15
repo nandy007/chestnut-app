@@ -1,6 +1,6 @@
 {
   "name": "chestnut-app",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "koa2 app",
   "main": "index.js",
   "scripts": {
@@ -28,8 +28,8 @@
   },
   "dependencies": {
     "chestnut-router": "^0.2.0",
-    "chestnut-session": "^0.2.0",
-    "chestnut-utils": "^0.2.0",
+    "chestnut-session": "^0.2.1",
+    "chestnut-utils": "^0.2.1",
     "ejs": "^2.5.6",
     "http-proxy": "^1.16.2",
     "koa": "^2.0.0",
